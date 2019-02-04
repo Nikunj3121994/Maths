@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+
+var startyear =parseFloat(document.getElementById("startyear").value);
+
+var startvalue =parseFloat(document.getElementById("startvalue").value);
+
+var endyear =parseFloat(document.getElementById("endyear").value);
+
+
+var a=[2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33,2,1,1.3,1.5,2,3.21,6,4.33]
+var b=[];
+var c=[];
+
+for(i=0;i<a.length;i++){
+b[i] = 100+a[i];
+}
+
+for(i=0;i<b.length;i++){
+c[i] = b[i]/100;
+}
+
+var d = startyear - 1971;
+
+var e = endyear - 1971;
+
+var multiply = 1;
+for(f=d;f<e;f++){
+multiply = multiply * c[f];
+
+}
+
+var multiple=[];
+for(i=0;i<b.length;i++){
+multiple[i]=1;
+}
+
+for(i=0;i<multiple.length;i++){
+for(f=d;f<d+i;f++){
+  multiple[i]=multiple[i]*c[f];
+  }
+}
+
+var endvalue = startvalue * multiply;
+
+
+document.getElementById('endvalue').value = endvalue;
+	
+}
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:150px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right">Start-year </td>
+   <td><input id="startyear" type="number" onchange="calculate()" ;autofocus /></td>
+</tr>
+
+<tr>
+  
+   <td align="right">Start-value</td>
+   <td><input id="startvalue" type="number" onchange="calculate()";/></td>
+</tr>
+
+<tr>
+   
+   <td align="right">End Year </td>
+   <td><input id="endyear" type="number" onchange="calculate()";/></td>
+</tr>
+
+<tr>
+    
+    <td align="right">End value </td>
+    <td><input id="endvalue" type="number" ;/></td>
+</tr>
+
+</table>
+</body>
+</html>

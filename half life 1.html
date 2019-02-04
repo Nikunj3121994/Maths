@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<script>
+function calculate()
+{
+  var input1 = parseFloat(document.getElementById("input1").value);
+var input2 = parseFloat(document.getElementById("input2").value);
+var input3 = parseFloat(document.getElementById("input3").value);
+
+
+   if(input1<0||input2<0 || input3<0){
+                 document.getElementById("warning").innerHTML = "Please enter a positive value.......";
+               }
+   if(input1>=0 &&input2>=0&&input3>=0 ){
+                   document.getElementById("warning").innerHTML = "";
+                   }
+
+var midinput1 = input1;
+
+var midinput2 = input2;
+var midinput3 = input3;
+
+var a = 0.4342944819*midinput2*midinput3;
+var b = Math.log10(midinput1);
+var c = b-a;
+
+var midoutput = Math.pow(10,c);
+
+var output = midoutput;
+document.getElementById('value').value = output;
+
+
+}
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:150px;
+}
+
+select,form,option{
+width:120px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+<body>
+<p id="warning" align="center"></p>
+
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="principal" id="unitinputtable">
+    <td align="right">Original Value No</td>
+    </td>
+	   
+	   <td><input id="input1" type="number" onchange="calculate()" ;autofocus /></td>
+
+</tr>
+
+<tr>
+   <td align="right" class="principal" id="unitinputtable">
+    <td align="right">Decay Constant </td>
+    </td>
+	   
+	   <td><input id="input2" type="number" onchange="calculate()" ;autofocus /></td>
+
+</tr>
+<tr>
+   <td align="right" class="principal" id="unitinputtable">
+    <td align="right">Time </td>
+    </td>
+	   
+	   <td><input id="input3" type="number" onchange="calculate()" ;autofocus /></td>
+
+	   
+	   </tr>
+
+<tr>
+<td align="right" class="output1" id="unitoutputable"></td>
+<td align="right">Value after t time =</td>
+<td><input id="value" type="number" onchange="calculate()";/></td>
+</tr>
+</table>
+</body>
+</html>

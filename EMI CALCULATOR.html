@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+
+var principal =parseFloat(document.getElementById("principal").value);
+var roi =parseFloat(document.getElementById("roi").value);
+var time =parseFloat(document.getElementById("time").value);
+
+
+
+
+if(principal<0 || roi<0 || time<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value.......";
+}else{
+document.getElementById("warning").innerHTML = "";
+
+}
+
+var a = roi/1200;
+
+var b = 1 + a;
+
+var c = Math.log10(b);
+var d = time*c;
+var e = Math.pow(10, d)
+var f = (e)-1;
+var g = (e/f);
+var emi = g*principal*a;
+var h = emi * time;
+var interest = h - principal;
+
+document.getElementById('emi').value =emi;
+
+document.getElementById('interest').value =interest;
+document.getElementById('total').value = h ;
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:150px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="principal" id="unitinputtable">
+    <td align="right">Principal </td>
+  
+    </td>
+	            <td><input id="principal" type="number" onchange="calculate()" ;autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">Rate of interest(%)</td>
+    <td><input id="roi" type="number" onchange="calculate()";/></td>
+	</tr>
+
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">Number of installment </td>
+    <td><input id="time" type="number" onchange="calculate()";/></td>
+	
+
+</tr>
+
+
+<tr>
+ <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">EMI </td>
+    <td><input id="emi" type="number" ;/></td>
+   
+</tr>
+
+<tr>
+ <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">Interest </td>
+    <td><input id="interest" type="number" ;/></td>
+   
+</tr>
+
+<tr>
+ <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">Total </td>
+    <td><input id="total" type="number" ;/></td>
+   
+</tr>
+
+
+
+</table>
+</body>
+</html>

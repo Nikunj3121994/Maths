@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+
+var x =parseFloat(document.getElementById("x").value);
+if(x<0){
+                 document.getElementById("warning").innerHTML = "Please enter a positive value.......";
+               }
+   if(x>=0){
+                   document.getElementById("warning").innerHTML = "";
+                   }
+var y =parseFloat(document.getElementById("y").value);
+
+var a = Math.log10(x);
+var b = Math.log10(y);
+var z = b/a;
+document.getElementById('z').value = z;
+	
+}
+
+
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:100px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right">Base</td>
+   <td><input id="x" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td align="right"> Value </td>
+   <td><input id="y" type="number" onchange="calculate()";/></td>
+   
+   <td align="right"> Log Value = </td>
+   <td><input id="z" type="number" onchange="calculate()";/></td>
+</tr>
+</table>
+
+</tr>
+</table>
+</tr>
+</body>
+</html>

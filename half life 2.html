@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<script>
+function calculate1()
+{
+  var input1 = parseFloat(document.getElementById("input1").value);
+
+   if(input1<0){
+                 document.getElementById("warning").innerHTML = "Please enter a positive value.......";
+               }
+   if(input1>=0){
+                   document.getElementById("warning").innerHTML = "";
+                   }
+
+
+for(var i=0;i<input1unit.options.length;i++)
+    {
+	  if(input1unit.options[i].selected) input1unitid = i;
+    }
+
+scale = [1,60,3600,86400,31104000];
+
+var midinput1 = input1/scale[input1unitid];
+var midoutput = 0.693/midinput1;
+for(var i=0;i<valueunit.options.length;i++)
+    {
+	  if(valueunit.options[i].selected) valueunitid = i;
+	  }
+
+scale1 = [1,60,3600,86400,31104000];
+var output = midoutput/scale1[valueunitid];
+
+
+document.getElementById('value').value = output;
+}
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:150px;
+}
+
+select,form,option{
+width:120px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+<body>
+<p id="warning" align="center"></p>
+
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="principal" id="unitinputtable">
+    <td align="right">Decay Constant </td>
+    </td>
+	   
+	   <td><input id="input1" type="number" onchange="calculate1()" ;autofocus /></td>
+
+	   <td><form>
+                  <select name="input1unit" id="input1unit" onchange="calculate1()">
+				  
+				          <option value="1">Per second</option>
+                          <option value="2">Per minute</option>
+        				  <option value="3">Per hour</option>
+                          <option value="4">Per day</option>
+        				  <option value="5">per year</option>
+                          
+                  </select>
+  
+        </form>
+  </td>
+</tr>
+
+<tr>
+<td align="right" class="output1" id="unitoutputable"></td>
+<td align="right">Half Life</td>
+<td><input id="value" type="number" onchange="calculate1()";/></td>
+<td><select name="heightunit" id="valueunit" onchange="calculate1()">
+				          <option value="1">second</option>
+                          <option value="2">minute</option>
+        				  <option value="3">hour</option>
+                          <option value="4">day</option>
+        				  <option value="5">year</option>
+                          
+    </select>
+</td>
+</tr>
+</table>
+</body>
+</html>

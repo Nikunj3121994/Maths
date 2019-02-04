@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+
+var a11 =parseFloat(document.getElementById("a11").value);
+var a12 =parseFloat(document.getElementById("a12").value);
+var a13 =parseFloat(document.getElementById("a13").value);
+
+var a21 =parseFloat(document.getElementById("a21").value);
+var a22 =parseFloat(document.getElementById("a22").value);
+var a23 =parseFloat(document.getElementById("a23").value);
+
+
+var a31 =parseFloat(document.getElementById("a31").value);
+var a32 =parseFloat(document.getElementById("a32").value);
+var a33 =parseFloat(document.getElementById("a33").value);
+
+
+
+// determinant
+
+
+// find adjoin of matrix
+
+
+var c11 = a11;
+var c12 = a21;
+var c13 = a31;
+
+var c21 = a21;
+var c22 = a22;
+var c23 = a32;
+
+var c31 = a13;
+var c32 = a23;
+var c33 = a33;
+
+
+
+
+document.getElementById('c11').value =c11;
+document.getElementById('c12').value =c12;
+document.getElementById('c13').value =c13;
+
+
+document.getElementById('c21').value =c21;
+document.getElementById('c22').value =c22;
+document.getElementById('c23').value =c23;
+
+document.getElementById('c31').value =c31;
+document.getElementById('c32').value =c32;
+document.getElementById('c33').value =c33;
+
+
+	
+}
+
+
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:40px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+Matrix A =
+</tr>
+   </table>
+
+
+<table border="0" align="center" id="table">
+<tr>
+   <td><input id="a11" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td><input id="a12" type="number" onchange="calculate()";autofocus /></td>
+
+   <td><input id="a13" type="number" onchange="calculate()"  ;autofocus /></td>
+
+   </table>
+  
+<table border="0" align="center" id="table">
+<tr>
+   <td><input id="a21" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td><input id="a22" type="number" onchange="calculate()";autofocus /></td>
+
+   <td><input id="a23" type="number" onchange="calculate()"  ;autofocus /></td>
+
+   </table>
+  
+  <table border="0" align="center" id="table">
+<tr>
+   <td><input id="a31" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td><input id="a32" type="number" onchange="calculate()";autofocus /></td>
+
+   <td><input id="a33" type="number" onchange="calculate()"  ;autofocus /></td>
+
+   </table>
+  
+  
+   <br/>
+  <table>Transverse of Matrix =</table>
+<table border="0" align="center" id="table">
+<tr>
+ <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    
+    <td><input id="c11" type="number" ;/></td>
+	<td><input id="c12" type="number" ;/></td>
+	<td><input id="c13" type="number" ;/></td>
+   
+</tr>
+<tr>
+ <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    
+    <td><input id="c21" type="number" ;/></td>
+	<td><input id="c22" type="number" ;/></td>
+	<td><input id="c23" type="number" ;/></td>
+   
+</tr>
+<tr>
+ <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    
+    <td><input id="c31" type="number" ;/></td>
+	<td><input id="c32" type="number" ;/></td>
+	<td><input id="c33" type="number" ;/></td>
+   
+</tr>
+
+
+
+</table>  
+  
+  
+  
+  
+</tr>
+</body>
+</html>

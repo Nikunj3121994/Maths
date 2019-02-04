@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+
+var x =parseFloat(document.getElementById("x").value);
+
+var y =parseFloat(document.getElementById("y").value);
+
+var a =parseFloat(document.getElementById("a").value);
+
+var b = x + (a-1)*y;
+var z = (a/2)*(x+b);
+
+
+document.getElementById('b').value = z;
+
+document.getElementById('z').value = b;
+	
+}
+
+
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:100px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right">First Number</td>
+   <td><input id="x" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td align="right"> Difference </td>
+   <td><input id="y" type="number" onchange="calculate()";/></td>
+
+      <td align="right"> Nth term to find </td>
+   <td><input id="a" type="number" onchange="calculate()"  ;autofocus /></td>
+
+   </table>
+   <table border="0" align="center" id="table">
+   <td align="right">Term</td>
+   <td><input id="z" type="number" onchange="calculate()";/></td>
+   <td align="right">Sum of all Term</td>
+   <td><input id="b" type="number" onchange="calculate()";/></td>
+
+   </tr>
+</table>
+
+</tr>
+</table>
+</tr>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+function calculate3()
+{
+
+var principal =parseFloat(document.getElementById("principal").value);
+
+var amount =parseFloat(document.getElementById("amount").value);
+
+var mtime =parseFloat(document.getElementById("time").value);
+
+
+if(principal<0 || amount<0 || mtime<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value.......";
+}else{
+document.getElementById("warning").innerHTML = "";
+}
+
+for(var i=0;i<unitinput.options.length;i++)
+    {
+	  if(unitinput.options[i].selected) unitinputid = i;
+	}
+	
+switch(unitinputid){
+case 0:
+  time = mtime;
+  break;
+case 1:
+  time = mtime/12;
+  break;
+case 2:
+  time = mtime/360;
+  break;
+  }
+
+for(var j=0;j<amountinput.options.length;j++)
+    {
+	  if(amountinput.options[j].selected) amountinputid =j;
+	}
+
+	
+
+  
+var interest;
+
+switch(amountinputid){
+case 0:
+  interest=amount ;
+  break;
+case 1:
+  interest=amount-principal;
+  break;
+  }
+
+
+
+var roi = (100*interest)/(principal*time);
+
+
+document.getElementById('roi').value =roi;
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:150px;
+}
+
+select,form,option{
+width:150px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="principal" id="unitinputtable">
+    <td align="right">Principal </td>
+  
+    </td>
+	            <td><input id="principal" type="number" onchange="calculate3()" ;autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    
+  </td>
+  <td>
+         <form>
+                  <select name="amountinput" id="amountinput" onchange="calculate3()">
+				  
+				          <option value="1">Interest</option>
+                          <option value="2">Amount</option>
+  					  
+                  </select>
+  
+        </form>
+  </td>
+    
+  <td><input id="amount" type="number" onchange="calculate3()";/></td>
+</tr>
+
+<tr>
+   <td align="right" class="output" id="unitoutputtable"></td>
+    <td align="right">Time duration </td>
+    <td><input id="time" type="number" onchange="calculate3()";/></td>
+	<td><form>
+                  <select name="unitinput" id="unitinput" onchange="calculate3()">
+				  
+				          <option value="1">Year</option>
+                          <option value="2">Month</option>
+                          <option value="3">Days</option>
+						  
+                  </select>
+  
+        </form>
+  </td>
+  
+
+
+</tr>
+
+<tr>
+ <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">Rate of interest(%) </td>
+    <td><input id="roi" type="number" ;/></td>
+   
+</tr>
+
+
+
+</table>
+</body>
+</html>

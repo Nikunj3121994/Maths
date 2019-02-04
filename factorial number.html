@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+
+var x =parseFloat(document.getElementById("x").value);
+if(x<0){
+                 document.getElementById("warning").innerHTML = "Please enter a positive value.......";
+               }
+   if(x>=0){
+                   document.getElementById("warning").innerHTML = "";
+                   }
+var factorial = 1;
+//recursive function
+for(i=1;i<=x;i++){
+factorial = factorial * i;
+}
+document.getElementById('z').value = factorial;
+	
+}
+
+
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:100px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right">Number =</td>
+   <td><input id="x" type="number" onchange="calculate()"  ;autofocus /></td>
+</tr>
+<tr>
+   <td align="right">Factorial Number =</td>
+   <td><input id="z" type="number" onchange="calculate()";/></td>
+
+</tr>
+</table>
+
+</tr>
+</table>
+</tr>
+</body>
+</html>

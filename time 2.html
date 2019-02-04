@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate1()
+{
+
+var a = 0;
+var b = 0;
+var c = 0;
+var d = 0;
+
+
+var x = 0;
+var y = 0;
+var z = 0;
+var w = 0;
+
+var e = 0;
+var f = 0;
+var g = 0;
+var h = 0;
+
+
+var a =parseFloat(document.getElementById("a").value);
+var b =parseFloat(document.getElementById("b").value);
+var c =parseFloat(document.getElementById("c").value);
+var d =parseFloat(document.getElementById("d").value);
+
+var x =parseFloat(document.getElementById("x").value);
+var y =parseFloat(document.getElementById("y").value);
+var z =parseFloat(document.getElementById("z").value);
+var w =parseFloat(document.getElementById("w").value);
+
+
+ if(a<0||b<0 ||c<0 ||d<0 || x<0||y<0 ||z<0 ||w<0){
+                 document.getElementById("warning").innerHTML = "Please enter a positive value.......";
+               }
+else{
+                   document.getElementById("warning").innerHTML = "";
+                   }
+
+var time1 = 0;
+var time2 = 0;
+var time3 = 0;
+
+time1 = (360*a)+(30*b)+(7*c)+d;
+time2 = (360*x)+(30*y)+(7*z)+w;
+
+
+for(var i=0;i<unitinput.options.length;i++)
+    {
+	  if(unitinput.options[i].selected) unitinputid = i;
+    }
+
+	
+if(unitinputid == 0){
+time3 = time1+time2;
+}else if(unitinputid == 1){
+time3 = time1-time2;
+}
+
+	
+
+//divide total times
+//second
+var e = time3/360;
+var i = time3%360;
+time3 = i;
+
+var f = time3/30;
+var j = time3%30;
+time3 = j;
+
+
+var g = time3/7;
+var k = time3%7;
+time3 = k;
+
+var h = time3;
+
+document.getElementById('e').value = parseInt(e);
+document.getElementById('f').value = parseInt(f);
+document.getElementById('g').value = parseInt(g);
+document.getElementById('h').value = parseInt(h);
+
+
+}
+
+
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:100px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right">Year =</td>
+   <td><input id="a" type="number" onchange="calculate1()"  ;autofocus /></td>
+  
+   <td align="right">Month =</td>
+   <td><input id="b" type="number" onchange="calculate1()";/></td>
+
+      <td align="right">Week =</td>
+   <td><input id="c" type="number" onchange="calculate1()"  ;autofocus /></td>
+
+      <td align="right">Day =</td>
+   <td><input id="d" type="number" onchange="calculate1()"  ;autofocus /></td>
+
+   </table>
+   
+   <table border="0" align="center" id="table">
+<tr>	<td align="right"><form>
+                  <select name="unitinput" id="unitinput" onchange="calculate1()">
+				  
+				          <option value="1">+</option>
+                          <option value="2">-</option>
+                          
+                  </select>
+  
+        </form>
+  </td>
+</tr>
+</table>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right">Year =</td>
+   <td><input id="x" type="number" onchange="calculate1()"  ;autofocus /></td>
+  
+   <td align="right">Month =</td>
+   <td><input id="y" type="number" onchange="calculate1()";/></td>
+
+      <td align="right">Week =</td>
+   <td><input id="z" type="number" onchange="calculate1()"  ;autofocus /></td>
+
+   
+      <td align="right"> Day = </td>
+   <td><input id="w" type="number" onchange="calculate1()"  ;autofocus /></td>
+
+   </table>
+         <table border="0" align="center" id="table">
+<tr>	<td align="right">
+Total  </td>
+</tr>
+</table>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right">Year =</td>
+   <td><input id="e" type="number" onchange="calculate1()"  ;autofocus /></td>
+  
+   <td align="right">Month =</td>
+   <td><input id="f" type="number" onchange="calculate1()";/></td>
+
+      <td align="right">Week =</td>
+   <td><input id="g" type="number" onchange="calculate1()"  ;autofocus /></td>
+
+   
+      <td align="right">Day = </td>
+   <td><input id="h" type="number" onchange="calculate1()"  ;autofocus /></td>
+
+   </table>
+
+</tr>
+</table>
+</tr>
+</body>
+</html>

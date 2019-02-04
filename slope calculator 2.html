@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+
+var x1 =parseFloat(document.getElementById("x1").value);
+var y1 =parseFloat(document.getElementById("y1").value);
+var d =parseFloat(document.getElementById("d").value);
+var a =parseFloat(document.getElementById("a").value);
+
+
+
+
+if(x1<0 ||y1<0 ||d<0 ||a<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value.......";
+}else{
+document.getElementById("warning").innerHTML = "";
+
+}
+
+var a1= (3.14159/180)*a;
+var x2 = x1 + d*Math.cos(a1);
+var y2 = y1 + d*Math.sin(a1);
+
+document.getElementById('x2').value = x2;
+document.getElementById('y2').value = y2;
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:150px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="principal" id="unitinputtable">
+    <td align="right">First point(x1) = </td>
+  
+    </td>
+	            <td><input id="x1" type="number" onchange="calculate()" ;autofocus /></td>
+</tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">First point(y1) =</td>
+    <td><input id="y1" type="number" onchange="calculate()";/></td>
+	</tr>
+
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">Distance =</td>
+    <td><input id="d" type="number" onchange="calculate()";/></td>
+	
+
+</tr>
+
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">Angle of slope =</td>
+    <td><input id="a" type="number" onchange="calculate()";/></td>
+	
+
+</tr>
+
+
+<tr>
+ <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">Second point(x2) =</td>
+    <td><input id="x2" type="number" ;/></td>
+   
+</tr>
+
+<tr>
+ <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">Second Point(y2) =</td>
+    <td><input id="y2" type="number" ;/></td>
+   
+</tr>
+
+
+</table>
+</body>
+</html>

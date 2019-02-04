@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+
+var ax =parseFloat(document.getElementById("ax").value);
+var ay =parseFloat(document.getElementById("ay").value);
+var az =parseFloat(document.getElementById("az").value);
+var aw =parseFloat(document.getElementById("aw").value);
+
+var bx =parseFloat(document.getElementById("bx").value);
+var by =parseFloat(document.getElementById("by").value);
+var bz =parseFloat(document.getElementById("bz").value);
+var bw =parseFloat(document.getElementById("bw").value);
+
+
+
+var cx = ax+bx;
+var cy = ay+by;
+var cz = az+bz;
+var cw = aw+bw;
+
+document.getElementById('cx').value = cx;
+document.getElementById('cy').value = cy;
+document.getElementById('cz').value = cz;
+document.getElementById('cw').value = cw;
+	
+}
+
+
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:40px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>First Vector</tr>
+<tr>
+   <td align="right"></td>
+   <td><input id="ax" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td align="right"></td>
+   <td><input id="ay" type="number" onchange="calculate()";/></td>
+
+      <td align="right"> </td>
+   <td><input id="az" type="number" onchange="calculate()"  ;autofocus /></td>
+
+         <td align="right"> </td>
+   <td><input id="aw" type="number" onchange="calculate()"  ;autofocus /></td>
+
+   
+   </table>
+ 
+ 
+<table border="0" align="center" id="table">
+<tr>Second Vector</tr>
+<tr>
+   <td align="right"></td>
+   <td><input id="bx" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td align="right"></td>
+   <td><input id="by" type="number" onchange="calculate()";/></td>
+
+      <td align="right"></td>
+   <td><input id="bz" type="number" onchange="calculate()"  ;autofocus /></td>
+
+         <td align="right"> </td>
+   <td><input id="bw" type="number" onchange="calculate()"  ;autofocus /></td>
+
+   
+   </table>
+ 
+ 
+ 
+<table border="0" align="center" id="table">
+<tr>Summation of vector</tr>
+<tr>
+   <td align="right"></td>
+   <td><input id="cx" type="number";autofocus /></td>
+  
+   <td align="right"></td>
+   <td><input id="cy" type="number";/></td>
+
+      <td align="right"> </td>
+   <td><input id="cz" type="number"  ;autofocus /></td>
+
+   
+      <td align="right"> </td>
+   <td><input id="cw" type="number"  ;autofocus /></td>
+
+   </table>
+ 
+ 
+ 
+</tr>
+</table>
+</tr>
+</body>
+</html>

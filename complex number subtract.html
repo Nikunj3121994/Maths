@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+
+var ax =parseFloat(document.getElementById("ax").value);
+var ay =parseFloat(document.getElementById("ay").value);
+
+var bx =parseFloat(document.getElementById("bx").value);
+var by =parseFloat(document.getElementById("by").value);
+
+
+var cx = ax - bx;
+var cy = ay - by;
+
+document.getElementById('cx').value = cx;
+document.getElementById('cy').value = cy;
+	
+}
+
+
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:80px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right">First Number =</td>
+   <td><input id="ax" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td align="right">+ i</td>
+   <td><input id="ay" type="number" onchange="calculate()";/></td>
+
+      
+   </table>
+ 
+ 
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right"> Second Number =</td>
+   <td><input id="bx" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td align="right">+ i</td>
+   <td><input id="by" type="number" onchange="calculate()";/></td>
+
+      
+   </table>
+ 
+ 
+ 
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right">Subtract =</td>
+   <td><input id="cx" type="number";autofocus /></td>
+  
+   <td align="right">+ i</td>
+   <td><input id="cy" type="number";/></td>
+
+      
+   </table>
+ 
+ 
+ 
+</tr>
+</table>
+</tr>
+</body>
+</html>

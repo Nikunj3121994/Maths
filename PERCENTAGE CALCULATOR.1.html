@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate1()
+{
+
+var x =parseFloat(document.getElementById("x").value);
+
+var y =parseFloat(document.getElementById("y").value);
+
+var z = (x/100)*y;
+
+
+document.getElementById('z').value = z;
+	
+}
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:100px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right"></td>
+   <td><input id="x" type="number" onchange="calculate1()"  ;autofocus /></td>
+  
+   <td align="right"> % of</td>
+   <td><input id="y" type="number" onchange="calculate1()";/></td>
+   
+   <td align="right"> is equal to = </td>
+   <td><input id="z" type="number" onchange="calculate1()";/></td>
+    
+</tr>
+
+</table>
+</body>
+</html>

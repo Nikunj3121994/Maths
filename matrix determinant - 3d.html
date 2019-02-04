@@ -1,0 +1,123 @@
+ <!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+
+var a11 =parseFloat(document.getElementById("a11").value);
+var a12 =parseFloat(document.getElementById("a12").value);
+var a13 =parseFloat(document.getElementById("a13").value);
+
+var a21 =parseFloat(document.getElementById("a21").value);
+var a22 =parseFloat(document.getElementById("a22").value);
+var a23 =parseFloat(document.getElementById("a23").value);
+
+
+var a31 =parseFloat(document.getElementById("a31").value);
+var a32 =parseFloat(document.getElementById("a32").value);
+var a33 =parseFloat(document.getElementById("a33").value);
+
+
+
+
+
+
+var c = a11*((a22*a33)-(a23*a32)) - a12*((a21*a33)-(a31*a23)) + a13*((a21*a32)-(a31*a22)) ;
+
+document.getElementById('c').value =c;
+
+
+	
+}
+
+
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:40px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+Matrix A
+</tr>
+   </table>
+
+
+<table border="0" align="center" id="table">
+<tr>
+   <td><input id="a11" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td><input id="a12" type="number" onchange="calculate()";autofocus /></td>
+
+   <td><input id="a13" type="number" onchange="calculate()"  ;autofocus /></td>
+
+   </table>
+  
+<table border="0" align="center" id="table">
+<tr>
+   <td><input id="a21" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td><input id="a22" type="number" onchange="calculate()";autofocus /></td>
+
+   <td><input id="a23" type="number" onchange="calculate()"  ;autofocus /></td>
+
+   </table>
+  
+  <table border="0" align="center" id="table">
+<tr>
+   <td><input id="a31" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td><input id="a32" type="number" onchange="calculate()";autofocus /></td>
+
+   <td><input id="a33" type="number" onchange="calculate()"  ;autofocus /></td>
+
+   </table>
+  
+  
+  
+  
+  
+  
+  
+  
+
+   <br/>
+  <table>Determinant</table>
+<table border="0" align="center" id="table">
+<tr>
+ <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    
+    <td><input id="c" type="number" ;/></td>
+   
+</tr>
+
+</table>  
+  
+  
+  
+  
+</tr>
+</body>
+</html>

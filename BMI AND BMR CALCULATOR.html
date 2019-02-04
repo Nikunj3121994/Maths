@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+function calculate()
+{
+
+var height =parseFloat(document.getElementById("height").value);
+var mass =parseFloat(document.getElementById("mass").value);
+var age =parseFloat(document.getElementById("age").value);
+
+
+if(height<0 || mass<0){
+document.getElementById("warning").innerHTML = "Please enter a positive value.......";
+}else{
+document.getElementById("warning").innerHTML = "";
+
+}
+
+for(var i=0;i<massunit.options.length;i++)
+    {
+	  if(massunit.options[i].selected) massunitid = i;
+
+
+	  }
+
+var finalmass;
+switch(massunitid){
+case 0:
+  finalmass = mass;
+  break;
+case 1:
+  finalmass = mass*0.453592;
+  break;
+  }
+
+for(var i=0;i<heightunit.options.length;i++)
+    {
+	  if(heightunit.options[i].selected) heightunitid = i;
+
+
+	  }
+
+var finalheight;
+switch(heightunitid){
+case 0:
+  finalheight = height/100;
+  break;
+case 1:
+  finalheight = height;
+  break;
+case 2:
+  finalheight = height*0.3048;
+  break;
+
+  }
+
+var a = (finalheight*finalheight);
+var b = (finalmass)/a;
+ 
+document.getElementById('bmi').value =b;
+
+if(b<18.5 || b>24.9){
+       if(b<18.5){
+	   document.getElementById("warning").innerHTML = "Under weight";
+	   }else{
+	   document.getElementById("warning").innerHTML = "Over weight";
+	   
+	   }
+
+}
+
+for(var i=0;i<genderunit.options.length;i++)
+    {
+	  if(genderunit.options[i].selected) genderunitid = i;
+
+
+	  }
+
+switch(genderunitid){
+case 0:
+  bmr = (10*finalmass)+(625*finalheight)-(5*age)+5;
+  break;
+case 1:
+  bmr = (10*finalmass)+(625*finalheight)-(5*age) -161;
+  break;
+
+  }
+
+
+document.getElementById('bmr').value =bmr;
+	
+}
+</script>
+<Style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:150px;
+}
+
+select,form,option{
+width:120px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center"></p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right" class="principal" id="unitinputtable">
+    <td align="right">Weight(mass) </td>
+  
+    </td>
+	   
+	   <td><input id="mass" type="number" onchange="calculate()" ;autofocus /></td>
+
+	   <td><form>
+                  <select name="massunit" id="massunit" onchange="calculate()">
+				  
+				          <option value="1">Kilogram</option>
+                          <option value="2">Pound</option>
+        				  
+                  </select>
+  
+        </form>
+  </td>
+	   </tr>
+<tr>
+   <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">Height</td>
+    <td><input id="height" type="number" onchange="calculate()";/></td>
+	<td><select name="heightunit" id="heightunit" onchange="calculate()">
+				  
+				          <option value="1">centimeter</option>
+                          <option value="2">meter</option>
+        				  <option value="2">foot</option>
+        				  
+                  </select>
+				  </td>
+  
+	</tr>
+
+<tr>
+   <td align="right" class="output1" id="unitoutputable"></td>
+    <td align="right">Age</td>
+    <td><input id="age" type="number" onchange="calculate()";/></td>
+  
+</tr>
+
+	
+	
+<tr>
+ <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">BMI(Body Mass Index) </td>
+    <td><input id="bmi" type="number" ;/></td>
+   
+</tr>
+
+<tr>
+ <td align="right" class="output" id="unitoutputtable">
+    
+ </td>
+    <td align="right">BMR(Body Mass Requirement) </td>
+    <td><input id="bmr" type="number" ;/></td>
+    <td><form>
+                  <select name="genderunit" id="genderunit" onchange="calculate()">
+				  
+				          <option value="1">Male</option>
+                          <option value="2">Female</option>
+        				  
+                  </select>
+  
+        </form>
+  </td>
+</tr>
+
+
+
+</table>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+
+var x =parseFloat(document.getElementById("x").value);
+var y =parseFloat(document.getElementById("y").value);
+
+if(x<0 || y<0 && y>x){
+                 document.getElementById("warning").innerHTML = "Please enter a correct value.......";
+               }
+   if(x>=0 && y>=0 ){
+                   document.getElementById("warning").innerHTML = "";
+                   }
+var factorial = 1;
+//recursive function
+for(i=1;i<=x;i++){
+factorial = factorial * i;
+}
+
+
+var factorial1 = 1;
+//recursive function
+for(i=1;i<=x-y;i++){
+factorial1 = factorial1 * i;
+}
+
+var factorial2 = 1;
+//recursive function
+for(i=1;i<=y;i++){
+factorial2 = factorial2 * i;
+}
+
+var permutation = (factorial/factorial1);
+var combination = (factorial)/(factorial1*factorial2);
+
+document.getElementById('z').value = permutation;
+document.getElementById('w').value = combination;
+	
+}
+
+
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:100px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right">Number n =</td>
+   <td><input id="x" type="number" onchange="calculate()"  ;autofocus /></td>
+</tr>
+
+<tr>
+   <td align="right">r =</td>
+   <td><input id="y" type="number" onchange="calculate()"  ;autofocus /></td>
+</tr>
+
+<tr>
+   <td align="right">nPr =</td>
+   <td><input id="z" type="number" onchange="calculate()";/></td>
+
+</tr>
+
+
+<tr>
+   <td align="right">nCr =</td>
+   <td><input id="w" type="number" onchange="calculate()";/></td>
+
+</tr>
+
+
+</table>
+
+</tr>
+</table>
+</tr>
+</body>
+</html>

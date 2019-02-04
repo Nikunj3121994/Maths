@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<script>
+function calculate()
+{
+
+var x =parseFloat(document.getElementById("x").value);
+
+var y =parseFloat(document.getElementById("y").value);
+
+var a =parseFloat(document.getElementById("a").value);
+
+var c = a -1 ;
+
+var d = Math.pow(y,c);
+
+var z = x*d;
+
+var g = Math.pow(y,a);
+
+var e = g -1;
+var f = y - 1;
+var b = x*e/f;
+
+
+document.getElementById('z').value = z;
+
+document.getElementById('b').value = b;
+
+	
+}
+
+
+</script>
+<style>
+td,p
+{
+    font-size:20px;
+	
+}
+
+input
+{
+    font-size:14pt;
+    width:100px;
+}
+select,form,option{
+width:100px;
+height:30px;
+size:30px;
+font-size:14pt;
+}
+</style>
+
+<p id="warning" align="center">
+
+</p>
+
+<table border="0" align="center" id="table">
+<tr>
+   <td align="right">First Number</td>
+   <td><input id="x" type="number" onchange="calculate()"  ;autofocus /></td>
+  
+   <td align="right"> Ratio </td>
+   <td><input id="y" type="number" onchange="calculate()";/></td>
+
+      <td align="right"> Nth term to find </td>
+   <td><input id="a" type="number" onchange="calculate()"  ;autofocus /></td>
+
+   </table>
+   <table border="0" align="center" id="table">
+   <td align="right">Nth Term</td>
+   <td><input id="z" type="number" onchange="calculate()";/></td>
+   <td align="right">Sum of all Term</td>
+   <td><input id="b" type="number" onchange="calculate()";/></td>
+
+   </tr>
+</table>
+
+</tr>
+</table>
+</tr>
+</body>
+</html>
